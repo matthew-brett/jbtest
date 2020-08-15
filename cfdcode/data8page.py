@@ -36,21 +36,9 @@ def data8pagerole(name, rawtext, text, lineno, inliner, options={},
     messages : list
         list of system messages. Can be empty.
     """
-    env = inliner.document.settings.env
-    # process class options.
-    # http://docutils.sourceforge.net/docs/howto/rst-roles.html
-    # Remaining options will be added as attributes of the node (see
-    # below).
-    set_classes(options)
-    # Get title and link
     text = utils.unescape(text)
-    has_fname, title, fname = split_explicit_title(text)
-    if has_fname:
-        raise ExtensionError('Page role cannot have explicit title')
-    refnode = nodes.paragraph(title, title, **options)
-    # We may need the line number for warnings
-    set_role_source_info(inliner, lineno, refnode)
-    return [refnode], []
+    node = nodes.paragraph(text, text, **options)
+    return [node], []
 
 
 def setup(app):
