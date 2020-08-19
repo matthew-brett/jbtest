@@ -1,11 +1,11 @@
-# Test for Jupyter book roles
+# Test for Jupyter ignore
 
 ```
-pip install -e .
+make html
 ```
 
-```
-make
-```
+Notice log message:
 
-Compare `_build/html/markdown.html` (role does not work) with `bare-sphinx/_build/html/index.html` (role does work).
+```
+WARNING: Found a content page that is not in _toc.yml: orphaned_nb.ipynb.
+```
