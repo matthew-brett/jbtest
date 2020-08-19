@@ -2,8 +2,3 @@
 title: My sample book
 author: The Jupyter Book Community
 logo: logo.png
-
-sphinx:
-  extra_extensions:
-    # For noting license and linking to data8 version of page.
-    - cfdcode.data8page
